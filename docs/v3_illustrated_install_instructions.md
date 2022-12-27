@@ -3,17 +3,17 @@
 Remove contents from box.
 
 # Contents:
-* 8x M.2 5x12mm screws for the case
-* 4x M.2 5x12mm screws for the fan
+* 8x M2.5-0.45x12mm flat-head screws for the case
+* 4x M2.5-0.45x12mm flat-head screws for the fan
 * 4x bolts for the fan
-* 1x fan
+* 1x fan, 5V, 30x30x7mm
 * 1x case top
 * 1x case bottom
-* 1x OLED display (0.91 IIC 128x32 LCD)
+* 1x OLED display (0.91 inch IIC 128x32px)
 * 2x bottom plastic risers
 * 1x plastic top riser
 * 1x plastic OLED holder that is also a front riser
-* 2x small FCC ribbon cables
+* 2x small FCC ribbon cables (1 spare)
 * 1x small rubber square that break out to 4x small rubber feet
 
 !!! warning "OLED is sensitive to pressure, do NOT push down on the very thin glass as it will crack thereby making the OLED non-functional"
@@ -24,7 +24,7 @@ Take bottom part of the case, insert the RPI4 into the bottom case at an angle, 
 
 <img src="RPI4_insert_into_case.jpg" width="400" />
 
-??? note "IF you bought heatsink's (sold seperatly), it's advised to install them now before installing the HAT"
+??? note "IF you bought heatsinks (sold seperatly), it's advised to install them now before installing the HAT"
 
 # Step 3
 
@@ -68,7 +68,7 @@ Take the plastic OLED holder, turn the OLED over where the back side is facing y
 
 <img src="HAT_install_OLED_into_holder.jpg" width="400" />
 
-!!! warning "Be careful on handling this display, slight pressure will damage the OLED, however in the event that this does happen, replacements are cheap and can be found in most electronic stores or Amazon, look for any IIC (I2C) .91 inch display for Arduino" 
+!!! warning "Be careful when handling this display, even slight pressure will damage the OLED, however in the event that this does happen, replacements are cheap and can be found in most electronic stores or Amazon, look for any IIC (I2C) 0.91 inch display for Arduino" 
 
 # Step 8
 
