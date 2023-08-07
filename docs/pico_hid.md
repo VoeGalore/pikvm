@@ -19,10 +19,10 @@ This page explains how to build, connect and use all the features of the Pico HI
 If you are building the PiKVM V1, then all the necessary components should already be at your fingertips.
 If you are making the Pico HID for V2 or V3, then here is what you will need:
 
-* Raspberry Pi Pico board with soldered pins. [An official green board](https://pico.pinout.xyz) is recommended.
-* *x1* USB-A to Micro-USB cable.
-* *x10* dupont wires female-female.
-* Optional: *x1* 1N5819 diode. But any similar one will do.
+* Raspberry Pi Pico board with soldered pins. [An official green board (Pico H/WH)](https://pico.pinout.xyz) is recommended.
+* *1x* USB type A to Micro-B cable.
+* *10x* dupont female-female wires.
+* Optional: *1x* 1N5819 diode. But anything similar one will do.
 
 !!! tip "Tip for soldering guru"
     If you know how to solder, you can buy the Pico without pins and no dupond wires, and just solder everything.
@@ -50,12 +50,12 @@ Connect all the parts according to the scheme:
 By default, Pico HID emulates a USB keyboard and an absolute or relative mouse
 (read [here](mouse.md) about the difference between mouse modes).
 For most cases, nothing needs to be changed here. However, if you need something special
-(like Windows 98 support), you can do it without reflashing on the current firmware.
+(like Windows 98 support), you can do it without reflashing over the current firmware.
 
 To achieve this, the Pico HID uses a runtime configuration, which is set by connecting
 some GPIOs with Ground (`GND`) lines.
 
-| Pin name | Description |
+| Pin name | Description (when connected to GND) |
 |----------|-------------|
 | `GP2`    | Enable PS/2 keyboard & mouse support (see below). |
 | `GP3`    | Prefer the PS/2 keyboard over USB when turning on the HID (if PS/2 enabled). |
@@ -66,10 +66,10 @@ some GPIOs with Ground (`GND`) lines.
 | `GP9`    | Prefer the Windows 98 USB absolute mouse over the regular absolute one (if enabled). |
 
 !!! example
-    To enable Windows 98 absolute mouse, just connect pin `GP9` to any `GND` [on the Pico](https://pico.pinout.xyz).
+    Connecting pin `GP9` to any `GND` [on the Pico](https://pico.pinout.xyz) enables Windows 98 absolute mouse support.
 
 !!! warning
-    PS/2 is not implemented now. Soon (r) (c) (tm)
+    At this time, PS/2 is not yet implemented. Soon (r) (c) (tm)
 
 
 -----
@@ -78,10 +78,10 @@ some GPIOs with Ground (`GND`) lines.
 To upload the firmware to Pico HID, you can use any computer with a USB port.
 
 1. [Download](https://github.com/pikvm/kvmd/releases) the latest release of the firmware. The file is called `pico-hid.uf2`.
-2. Press the white button on the Pico board and plug it using USB cable to the computer.
+2. Press and hold down the white button (BOOTSEL) on the Pico board and plug it using USB cable to the computer.
 3. Release the button.
-4. The Pico board appears as a flash drive on the host computer.
-5. Copy the `pico-hid.uf2` file to this flash drive.
+4. The Pico board will appear as a flash drive on the host computer.
+5. Copy the `pico-hid.uf2` file to this flash drive root partition.
 6. Safely disconnect the USB device.
 
 
@@ -94,7 +94,7 @@ If you are building PiKVM V1, then no further action with the Pico HID is requir
 
 If you are making the Pico HID for V2 or V3, add the following lines to the PiKVM configuration and reboot it.
 
-!!! note "KVMD >= 3.241 is required for the Pico HID"
+!!! note "KVMD >= 3.241 is required for the Pico HID's complete functionalities"
 
 * `/boot/config.txt`
     ```ini
